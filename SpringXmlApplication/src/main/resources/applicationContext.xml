@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- bean definitions -->
+    <bean id="contentBasedFilter" class="org.example.lesson14.ContentBasedFilter" />
+    <bean id="movie" class="org.example.lesson14.Movie" />
+    <bean id="collaborativeFilter" class="org.example.lesson14.CollaborativeFilter" />
+    <!--<bean id="recommenderImplementation" class="org.example.lesson14.RecommenderImplementation">
+        <property name="filter" ref="collaborativeFilter"/>
+    </bean>-->
+    <bean id="recommenderImplementation2" class="org.example.lesson14.RecommenderImplementation">
+        <constructor-arg ref="collaborativeFilter"/>
+    </bean>
+
+    <context:component-scan base-package="org.example.lesson14"/>
+</beans>

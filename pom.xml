@@ -14,6 +14,8 @@
         <module>SpringXmlApplication</module>
         <module>SpringWebApplication</module>
         <module>SpringJDBCApplication</module>
+        <module>SpringJPAApplication</module>
+        <module>SpringREST</module>
     </modules>
 
     <properties>
